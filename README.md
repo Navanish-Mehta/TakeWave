@@ -18,7 +18,10 @@ A real-time collaborative Kanban board inspired by Trello. Built with Node.js, E
 | 🛠️ Code Quality     | Modular, clean, .env.example included | |
 
 ---
-## ![download](https://github.com/user-attachments/assets/45e43433-c6d9-4389-abdb-e597aadbd2a6) ScreenShot
+## 📸ScreenShot of Webite:
+<img width="1920" height="1080" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/dc56e6f9-3b6a-400b-910e-dedf7563d5ab" />
+<img width="1920" height="1080" alt="Screenshot (427)" src="https://github.com/user-attachments/assets/ffad8105-568c-4be7-b279-053ff5f162c5" />
+
 
 ## 🚀 Features
 - **User Registration & Login:** Secure JWT authentication, hashed passwords
