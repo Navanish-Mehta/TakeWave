@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
   }, [token]);
 
   const login = async (username, password) => {
-    const res = await api.post('/api/auth/login', { username, password });
+    const res = await api.post('/auth/login', { username, password });
     setToken(res.data.token);
     setUser(res.data.user);
     localStorage.setItem('token', res.data.token);
@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
   };
 
   const register = async (username, email, password) => {
-    await api.post('/api/auth/register', { username, email, password });
+    await api.post('/auth/register', { username, email, password });
     // Optionally auto-login after register
     await login(username, password);
   };
