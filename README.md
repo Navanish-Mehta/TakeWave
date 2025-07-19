@@ -156,8 +156,9 @@ Shows the 20 most recent actions (create, update, delete, assign, etc.) in a vis
 ---
 
 ## 🔗 Live App
-- [Frontend Live URL](https://your-frontend-url)
-- [Backend Live URL](https://your-backend-url)
+- [Frontend Live URL](https://task-wave-xi.vercel.app)
+- [Backend Live URL](https://takewave-backend.onrender.com)
+## [Live Website Link:](https://task-wave-xi.vercel.app)
 
 ---
 
