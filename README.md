@@ -18,6 +18,7 @@ A real-time collaborative Kanban board inspired by Trello. Built with Node.js, E
 | 🛠️ Code Quality     | Modular, clean, .env.example included | |
 
 ---
+## ![download](https://github.com/user-attachments/assets/45e43433-c6d9-4389-abdb-e597aadbd2a6) ScreenShot
 
 ## 🚀 Features
 - **User Registration & Login:** Secure JWT authentication, hashed passwords
