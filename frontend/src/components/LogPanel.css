@@ -6,24 +6,38 @@
   width: 350px;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(79, 140, 255, 0.12);
   padding: 1.5rem;
   z-index: 200;
   font-size: 0.95rem;
   max-height: calc(100vh - 200px);
   overflow-y: auto;
-  border: 1px solid #f0f0f0;
+  border: 1px solid rgba(79, 140, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.floating-log-panel:hover {
+  box-shadow: 0 12px 40px rgba(79, 140, 255, 0.18);
+  transform: translateY(-2px);
 }
 
 .floating-log-panel h3 {
   margin: 0 0 1.25rem 0;
   color: #2a3a4b;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floating-log-panel h3::before {
+  content: "📊";
+  font-size: 1.2rem;
 }
 
 /* Activity Log List Styles */
@@ -35,16 +49,36 @@
 
 /* Log Card - matches task card styling */
 .log-card {
-  background: #fff;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
   padding: 1rem;
-  transition: box-shadow 0.2s;
-  border: 1px solid #f8f9fa;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(79, 140, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.log-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4f8cff, #6a82fb);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .log-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.15);
+  transform: translateY(-2px);
+  border-color: rgba(79, 140, 255, 0.1);
+}
+
+.log-card:hover::before {
+  opacity: 1;
 }
 
 .log-card-header {
@@ -59,6 +93,7 @@
   width: 20px;
   text-align: center;
   flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .log-content {
@@ -75,29 +110,44 @@
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.4;
+  flex-wrap: wrap;
 }
 
 .log-user {
-  font-weight: 600;
+  font-weight: 700;
   color: #2a3a4b;
+  background: linear-gradient(135deg, #4f8cff, #6a82fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .log-action {
   text-transform: capitalize;
   color: #6c757d;
+  font-weight: 600;
 }
 
 .log-task {
-  font-weight: 600;
+  font-weight: 700;
   color: #4f8cff;
+  text-shadow: 0 1px 2px rgba(79, 140, 255, 0.1);
 }
 
 .log-time {
   font-size: 0.85rem;
   color: #6c757d;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 0.2rem;
   opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.log-time::before {
+  content: "🕒";
+  font-size: 0.8rem;
 }
 
 /* Custom scrollbar */
@@ -111,12 +161,12 @@
 }
 
 .floating-log-panel::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: linear-gradient(135deg, #4f8cff, #6a82fb);
   border-radius: 3px;
 }
 
 .floating-log-panel::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: linear-gradient(135deg, #3a7cff, #5a72fb);
 }
 
 /* Responsive Design */
@@ -124,12 +174,17 @@
   .floating-log-panel {
     position: static;
     width: 100%;
-    max-width: 100%;
+    max-width: 1200px;
     margin: 2rem auto 0 auto;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(79, 140, 255, 0.1);
     border-radius: 16px;
     max-height: none;
     height: auto;
+    transform: none;
+  }
+  
+  .floating-log-panel:hover {
+    transform: none;
   }
 }
 
