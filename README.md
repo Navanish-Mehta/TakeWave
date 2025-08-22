@@ -25,6 +25,7 @@ A real-time collaborative Kanban board inspired by Trello. Built with Node.js, E
 
 ## 🚀 Features
 - **User Registration & Login:** Secure JWT authentication, hashed passwords
+- **Forgot Password (OTP via Gmail):** Request 6-digit OTP, verify, and reset password
 - **Kanban Board:** Three columns (Todo, In Progress, Done), drag-and-drop, responsive design
 - **Task Management:** Create, edit, delete, assign, and move tasks
 - **Smart Assign:** Assigns a task to the user with the fewest active tasks. Tooltip: _"Assigns this task to the user with the fewest non-Done tasks. Ensures fair workload distribution."_
@@ -81,13 +82,16 @@ npm run dev
 - **Frontend:** Deploy `/frontend` to Vercel, Netlify, etc.
 - **Backend:** Deploy `/backend` to Render, Railway, etc.
 - **Environment Variables:**
-  - Backend: `MONGO_URI`, `JWT_SECRET`
+  - Backend: `MONGO_URI`, `JWT_SECRET`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`
   - Frontend: `VITE_API_URL` (point to deployed backend `/api`)
 
 ---
 
 ## 📝 Usage Guide
 - Register or log in
+- If you forgot your password, click "Forgot Password?" on the login page:
+  - Enter your registered Gmail to receive a 6-digit OTP (valid 10 minutes)
+  - Enter the OTP and your new password to reset
 - Create, edit, delete, and move tasks on the board
 - Assign tasks to users or use Smart Assign (hover for logic)
 - See all changes live (open multiple browsers to test)
